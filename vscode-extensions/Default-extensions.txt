@@ -1,0 +1,12 @@
+aaron-bond.better-comments
+alefragnani.bookmarks
+donjayamanne.githistory
+eamodio.gitlens
+github.github-vscode-theme
+gruntfuggly.todo-tree
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
+pkief.material-icon-theme
+streetsidesoftware.code-spell-checker
+usernamehw.errorlens
