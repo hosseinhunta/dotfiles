@@ -3,30 +3,6 @@
 A fully automated development environment setup for Windows.  
 This repository contains all my configurations for **PowerShell**, **Oh My Posh**, **VS Code profiles**, **extensions**, and **fonts** – ready to be deployed on any fresh Windows machine with a single script.
 
-## 📂 Repository Structure
-
-```
-dotfiles/
-├── setup.ps1                          # Main installation script
-├── powershell/
-│   └── Microsoft.PowerShell_profile.ps1
-├── posh-themes/
-│   └── hunta.omp.json                 # Custom Oh My Posh theme
-├── vscode/
-│   ├── settings.json                  # Global VS Code settings (font, cursor, etc.)
-│   └── (keybindings.json)             # Optional – uncomment in script if needed
-├── vscode-profiles/
-│   ├── php.code-profile
-│   ├── python.code-profile
-│   └── typescript.code-profile
-├── vscode-extensions/
-│   ├── php-extensions.txt
-│   ├── python-extensions.txt
-│   └── typescript-extensions.txt
-└── fonts/
-    └── README.md                      # Links to required Nerd Fonts
-```
-
 ## ✨ What’s Inside?
 
 - **PowerShell 7** – modern, cross‑platform shell.
@@ -35,6 +11,15 @@ dotfiles/
 - **VS Code** – fully isolated language profiles for PHP, Python, and TypeScript/JavaScript, each with its own extensions and settings.
 - **Nerd Fonts** – ligature‑rich coding fonts (manual installation required).
 - **Terminal look & feel** – smooth scrolling, cursor animations, minimal UI.
+
+
+## 🇮🇷 Developer Tools for Iran (DTI)
+
+A curated set of locally‑hosted mirrors and tools to help Iranian developers overcome internet disruptions. Includes setup guides for Docker, Linux (Debian/Ubuntu/CentOS), NPM/Yarn/PNPM/Bun, Python (pip/Poetry/uv), PHP Composer, NuGet, GitHub Container Registry, Maven, GitLab, and more.
+
+📖 [View the full DTI guide →](./DTI/DTI.md)
+
+---
 
 ## 📋 Prerequisites
 
@@ -217,6 +202,7 @@ wsl.exe --set-version <DistroName> 2
 -   **Older versions of Windows**:  
     Follow the [manual installation steps](https://learn.microsoft.com/install-manual).
 
+[Debian on WSL – Complete Development Setup](debian.md)
 For complete documentation, visit the [official WSL documentation](https://learn.microsoft.com/en-us/windows/wsl/).
 
 
@@ -273,6 +259,8 @@ For complete documentation, visit the [official WSL documentation](https://learn
 
 -   **WSL installation hangs at 0%**  
     Run `wsl --install --web-download -d Ubuntu` to force a direct web download. Also, ensure that virtualization is enabled in your BIOS/UEFI settings.
+
+---
 
 ## 📦 Credits & Inspiration
 
