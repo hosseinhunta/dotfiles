@@ -10,7 +10,7 @@ dotfiles/
 ├── setup.ps1                          # Main installation script
 ├── powershell/
 │   └── Microsoft.PowerShell_profile.ps1
-├── .posh-themes/
+├── posh-themes/
 │   └── hunta.omp.json                 # Custom Oh My Posh theme
 ├── vscode/
 │   ├── settings.json                  # Global VS Code settings (font, cursor, etc.)

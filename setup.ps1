@@ -49,28 +49,49 @@ if (Test-Path $localThemeSource) {
     Write-Host "⚠️ Theme file not found at $localThemeSource. Skipping theme copy." -ForegroundColor Yellow
 }
 
+Write-Host "Installing eza (modern ls replacement)..." -ForegroundColor Cyan
+winget install eza-community.eza --accept-package-agreements
+
 Write-Host "🔄 Restoring VS Code profiles..."
+if (!(Get-Command code -ErrorAction SilentlyContinue)) {
+    Write-Host "❌ VS Code not found. Please install Visual Studio Code first." -ForegroundColor Red
+    exit 1
+}
 $vscodeProfilesDir = "$env:APPDATA\Code\User\profiles"
 if (!(Test-Path $vscodeProfilesDir)) {
     New-Item -ItemType Directory -Path $vscodeProfilesDir -Force
 }
 
-Get-ChildItem ".\vscode-profiles\*.code-profile" | ForEach-Object {
-    Copy-Item $_.FullName -Destination $vscodeProfilesDir -Force
+if (Test-Path ".\vscode-profiles") {
+    Get-ChildItem ".\vscode-profiles\*.code-profile" | ForEach-Object {
+        Copy-Item $_.FullName -Destination $vscodeProfilesDir -Force
+    }
+    Write-Host "✅ VS Code profiles copied."
+    
+    Get-ChildItem ".\vscode-profiles\*.code-profile" | ForEach-Object {
+        Write-Host "Importing profile $($_.BaseName)..."
+        code --import-profile $_.FullName --wait
+    }
+} else {
+    Write-Host "⚠️ No vscode-profiles folder found. Skipping." -ForegroundColor Yellow
 }
 Write-Host "✅ VS Code profiles copied. Open VS Code and import each profile manually via Profiles > Import Profile."
 
 Write-Host "📥 Installing VS Code extensions..."
 $extensionsDir = ".\vscode-extensions"
-Get-ChildItem $extensionsDir -Filter "*.txt" | ForEach-Object {
+if (Test-Path $extensionsDir) {
+    Get-ChildItem $extensionsDir -Filter "*.txt" | ForEach-Object {
     $profileName = $_.BaseName -replace "-extensions",""
     Write-Host "🔹 Installing extensions for profile: $profileName"
     Get-Content $_.FullName | ForEach-Object {
         code --install-extension $_ --profile $profileName --force
     }
 }
-Write-Host "✅ Extensions installed."
+} else {
+    Write-Host "⚠️ No extensions folder found. Skipping." -ForegroundColor Yellow
+}
 
+Write-Host "✅ Extensions installed."
 Copy-Item -Path ".\vscode\settings.json" -Destination "$env:APPDATA\Code\User\settings.json" -Force
 # Copy-Item -Path ".\vscode\keybindings.json" -Destination "$env:APPDATA\Code\User\keybindings.json" -Force
 Write-Host "✅ VS Code global settings installed."
