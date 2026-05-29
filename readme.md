@@ -3,6 +3,8 @@
 A fully automated development environment setup for Windows.  
 This repository contains all my configurations for **PowerShell**, **Oh My Posh**, **VS Code profiles**, **extensions**, and **fonts** – ready to be deployed on any fresh Windows machine with a single script.
 
+![What’s Inside](./images/head.png)
+
 ## ✨ What’s Inside?
 
 - **PowerShell 7** – modern, cross‑platform shell.
@@ -14,6 +16,8 @@ This repository contains all my configurations for **PowerShell**, **Oh My Posh*
 
 
 ## 🇮🇷 Developer Tools for Iran (DTI)
+
+![Developer Tools for Iran (DTI)](./images/DTI.png)
 
 A curated set of locally‑hosted mirrors and tools to help Iranian developers overcome internet disruptions. Includes setup guides for Docker, Linux (Debian/Ubuntu/CentOS), NPM/Yarn/PNPM/Bun, Python (pip/Poetry/uv), PHP Composer, NuGet, GitHub Container Registry, Maven, GitLab, and more.
 
@@ -28,7 +32,9 @@ A curated set of locally‑hosted mirrors and tools to help Iranian developers o
 - **PowerShell 7** – the script will install it automatically if missing, but you can pre‑install it from the Microsoft Store.
 - **Administrator privileges** – needed only to run the setup script (for `winget` installations).
 
+
 ## 🛠️ Installation (How to Use)
+![Installation](./images/main.png)
 
 1. **Clone the repository** anywhere you like:
    ```powershell

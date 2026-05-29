@@ -1,5 +1,7 @@
 # Setting Up Docker Hub Mirrors for Faster, More Reliable Pulls in Iran 🇮🇷
 
+![Mirrors for Faster, More Reliable Pulls in Iran](/images/docker.png)
+
 Docker Hub is the world's largest container image registry, but pulling images from it can be slow or even impossible when international internet connectivity is disrupted. **Registry mirrors** act as local caches, allowing you to pull images at high speed from servers inside Iran — without relying on unstable foreign links.
 
 ---
